@@ -16,4 +16,4 @@ To install the extension – unzip the file install.zip and copy the content to 
 When a Interaction window is shown – a new tab named Headset is shown. When selecting this tab the name and firmware version of a connected Jabra headset is shown. When the Interaction goes into a state where it is possible to mark is as Done – it can be done from the headset controller box.
 
 # Uninstallation
-To uninstall the extension close the Genesys softare and remove the files that was installed.
+To uninstall the extension close the Genesys software and remove the files that was installed.
