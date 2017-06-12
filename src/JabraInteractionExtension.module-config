@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+
+  <configSections>
+    <section name="modules" type="Microsoft.Practices.Composite.Modularity.ModulesConfigurationSection, Microsoft.Practices.Composite" />
+    <section name="tasks" type="Genesyslab.Desktop.Infrastructure.Config.TasksSection, Genesyslab.Desktop.Infrastructure" />
+  </configSections>
+
+  <tasks>
+    <task name="InteractionWorkspace.Voice.canUse" clickOnceGroupsToDownload="Voice" modulesToLoad="InteractionExtensionModule" />
+  </tasks>
+
+  <modules>
+    <module assemblyFile="JabraInteractionExtension.dll"
+				moduleType="JabraInteractionExtension.InteractionExtensionModule"
+				moduleName="InteractionExtensionModule"
+				startupLoaded="false"/>
+  </modules>
+
+</configuration>

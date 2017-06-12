@@ -1,0 +1,227 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7F9BC017-A245-4ED5-98E9-DDB8CCC8850B}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JabraInteractionExtension</RootNamespace>
+    <AssemblyName>JabraInteractionExtension</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Genesyslab.Desktop.Infrastructure, Version=8.0.1.6, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Import\Genesyslab.Desktop.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Genesyslab.Desktop.Modules.Core, Version=8.0.1.5, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Import\Genesyslab.Desktop.Modules.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Genesyslab.Desktop.Modules.Voice">
+      <HintPath>Import\Genesyslab.Desktop.Modules.Voice.dll</HintPath>
+    </Reference>
+    <Reference Include="Genesyslab.Desktop.Modules.Windows, Version=8.0.1.5, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Import\Genesyslab.Desktop.Modules.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="Genesyslab.Desktop.WPFCommon, Version=8.0.1.6, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Import\Genesyslab.Desktop.WPFCommon.dll</HintPath>
+    </Reference>
+    <Reference Include="Genesyslab.Enterprise.Model">
+      <HintPath>Import\Genesyslab.Enterprise.Model.dll</HintPath>
+    </Reference>
+    <Reference Include="Genesyslab.Platform.ApplicationBlocks.ConfigurationObjectModel, Version=8.5.201.6, Culture=neutral, PublicKeyToken=2248646200015f60, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Import\Genesyslab.Platform.ApplicationBlocks.ConfigurationObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Genesyslab.Platform.Commons, Version=8.0.0.1, Culture=neutral, PublicKeyToken=2248646200015f60, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Import\Genesyslab.Platform.Commons.dll</HintPath>
+    </Reference>
+    <Reference Include="Genesyslab.Platform.Commons.Protocols, Version=8.5.201.6, Culture=neutral, PublicKeyToken=2248646200015f60" />
+    <Reference Include="Genesyslab.Platform.Configuration.Protocols, Version=8.5.201.6, Culture=neutral, PublicKeyToken=2248646200015f60, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Import\Genesyslab.Platform.Configuration.Protocols.dll</HintPath>
+    </Reference>
+    <Reference Include="Genesyslab.Platform.OpenMedia.Protocols, Version=8.5.201.6, Culture=neutral, PublicKeyToken=2248646200015f60, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Import\Genesyslab.Platform.OpenMedia.Protocols.dll</HintPath>
+    </Reference>
+    <Reference Include="GnProtocol, Version=1.0.13224.0, Culture=neutral, PublicKeyToken=abee3da38e3ebf66, processorArchitecture=MSIL">
+      <HintPath>packages\GnProtocolInterface.1.0.13224.0\lib\net40\GnProtocol.dll</HintPath>
+    </Reference>
+    <Reference Include="GnProtocolOverUsbHid, Version=3.0.586.0, Culture=neutral, PublicKeyToken=d5c14edeb73b092a, processorArchitecture=MSIL">
+      <HintPath>packages\GnProtocolOverUsbHid.3.0.586.0\lib\net40\GnProtocolOverUsbHid.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UsbDeviceInfo, Version=1.0.10949.0, Culture=neutral, PublicKeyToken=ddd537774a768802, processorArchitecture=MSIL">
+      <HintPath>packages\UsbDeviceInfo.1.0.10949.0\lib\net40\UsbDeviceInfo.dll</HintPath>
+    </Reference>
+    <Reference Include="UsbDeviceScanner, Version=1.2.306.0, Culture=neutral, PublicKeyToken=7e3adec26ad93842, processorArchitecture=MSIL">
+      <HintPath>packages\UsbDeviceScanner.1.2.306.0\lib\net40\UsbDeviceScanner.dll</HintPath>
+    </Reference>
+    <Reference Include="UsbDeviceScannerInterface, Version=1.2.306.0, Culture=neutral, PublicKeyToken=ddd537774a768802, processorArchitecture=MSIL">
+      <HintPath>packages\UsbDeviceScanner.1.2.306.0\lib\net40\UsbDeviceScannerInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="UsbHidDevice, Version=2.0.585.0, Culture=neutral, PublicKeyToken=e396e3423458eafa, processorArchitecture=MSIL">
+      <HintPath>packages\UsbHidDevice.2.0.585.0\lib\net40\UsbHidDevice\bin\Release\UsbHidDevice.dll</HintPath>
+    </Reference>
+    <Reference Include="UsbHidDeviceInterface, Version=2.0.585.0, Culture=neutral, PublicKeyToken=f142cc8c287c2ed2, processorArchitecture=MSIL">
+      <HintPath>packages\UsbHidDevice.2.0.585.0\lib\net40\UsbHidDevice\bin\Release\UsbHidDeviceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\DeviceActionEventArgs.cs" />
+    <Compile Include="Models\DeviceAttachedOrDetactedEventArgs.cs" />
+    <Compile Include="Models\DeviceService.cs" />
+    <Compile Include="Models\TelephonyDevice.cs" />
+    <Compile Include="Views\IHeadsetButtonView.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\IPresentationModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\IHeadsetView.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\HeadsetButtonView.xaml.cs">
+      <DependentUpon>HeadsetButtonView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\PresentationModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\HeadsetView.xaml.cs">
+      <DependentUpon>HeadsetView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="InteractionExtensionModule.cs" />
+    <None Include="JabraInteractionExtension.module-config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Views\HeadsetButtonView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\HeadsetView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Biz2300.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+</Project>

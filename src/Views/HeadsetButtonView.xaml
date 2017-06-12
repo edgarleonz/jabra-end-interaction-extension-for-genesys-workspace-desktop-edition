@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="JabraInteractionExtension.Views.HeadsetButtonView"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:common="clr-namespace:Genesyslab.Desktop.WPFCommon;assembly=Genesyslab.Desktop.WPFCommon"
+			 xmlns:commonControls="clr-namespace:Genesyslab.Desktop.WPFCommon.Controls;assembly=Genesyslab.Desktop.WPFCommon"
+			 Height="300" Width="300">
+
+	<UserControl.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<common:DesignTimeResourceDictionary Source="/Genesyslab.Desktop.WPFCommon;component/themes/generic.xaml" />
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
+	</UserControl.Resources>
+
+	<commonControls:SideButton Name="splitToggleButton" Margin="2,2,0,0" Style="{DynamicResource SideButtonStyle}" Click="splitToggleButton_Click" >
+    <StackPanel Orientation="Horizontal">
+      <TextBlock Text="HEADSET:"/>
+      <TextBlock Text=" "/>
+      <TextBlock Text="{Binding DeviceName}"/>
+    </StackPanel>
+  </commonControls:SideButton>
+</UserControl>
