@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GnProtocolOverUsbHid</name>
+    </assembly>
+    <members>
+        <member name="M:GnProtocolOverUsbHid.GnpPacketLogger.LogGnpPacket(System.String,System.Threading.Mutex,System.String,System.Byte[])">
+            <summary>
+            Appends a GN Protocol packet's content to a log file.
+            </summary>
+            <param name="filename">Log filename</param>
+            <param name="gnpLogFileMutex">Global log file mutex</param>
+            <param name="direction">Direction string</param>
+            <param name="packetBytes">Packet data</param>
+        </member>
+        <member name="M:GnProtocolOverUsbHid.GnpPacketLogger.LogGnpPacket(System.String,System.Threading.Mutex,System.String,GnProtocol.GnpPacket)">
+            <summary>
+            Appends a GN Protocol packet's content to a log file.
+            </summary>
+            <param name="filename">Log filename</param>
+            <param name="gnpLogFileMutex">Global log file mutex</param>
+            <param name="direction">Direction string</param>
+            <param name="packet">Packet</param>
+        </member>
+        <member name="T:GnProtocolOverUsbHid.GnProtocolOverUsbHid">
+            <summary>
+            GN Protocol I/O handler for USB HID value array based transport layer.
+            </summary>
+        </member>
+        <member name="E:GnProtocolOverUsbHid.GnProtocolOverUsbHid.GnProtocolEventPacketReceived">
+            <summary>
+            Raised when a GN Protocol packet of type 'event' has been received.
+            </summary>
+        </member>
+        <member name="E:GnProtocolOverUsbHid.GnProtocolOverUsbHid.GnProtocolReplyPacketReceived">
+            <summary>
+            Raised when a GN Protocol packet of type 'reply' has been received.
+            Subscribing to these events is usually not relevant. 
+            It is used by internal tools such as the GN Protocol Monitor.
+            </summary>
+        </member>
+        <member name="P:GnProtocolOverUsbHid.GnProtocolOverUsbHid.ResponseTimeout">
+            <summary>
+            Response timeout in seconds (default value is 5 seconds).
+            </summary>
+        </member>
+        <member name="M:GnProtocolOverUsbHid.GnProtocolOverUsbHid.#ctor(UsbHidDeviceInterface.IUsbHidDevice)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="device">USB HID device</param>
+        </member>
+        <member name="M:GnProtocolOverUsbHid.GnProtocolOverUsbHid.SendGnProtocolPacket(GnProtocol.GnpPacket)">
+            <summary>
+            Send a GN Protocol package without waiting for a response.
+            Use this method to send GN Protocol packets of type 'event'.
+            </summary>
+            <param name="packet">Packet to send</param>
+        </member>
+        <member name="M:GnProtocolOverUsbHid.GnProtocolOverUsbHid.SendGnProtocolPacketAndWaitForResponse(GnProtocol.GnpPacket)">
+            <summary>
+            Send a GN Protocol package and wait for response.
+            </summary>
+            <param name="packet">Packet to send</param>
+            <returns>Response packet</returns>
+            <exception cref="T:System.TimeoutException">Thrown on response timeout</exception>
+            <exception cref="T:GnProtocol.GnpNackException">Thrown if response contains a NACK reply</exception>
+        </member>
+        <member name="M:GnProtocolOverUsbHid.GnProtocolOverUsbHid.SendGnProtocolPacketAndWaitForResponse(GnProtocol.GnpPacket,System.Int32)">
+            <summary>
+            Send a GN Protocol package and wait for response.
+            </summary>
+            <param name="packet">Packet to send</param>
+            <param name="responseTimeoutMs">Response timeout in milliseconds</param>
+            <returns>Response packet</returns>
+            <exception cref="T:System.TimeoutException">Thrown on response timeout</exception>
+            <exception cref="T:GnProtocol.GnpNackException">Thrown if response contains a NACK reply</exception>
+        </member>
+        <member name="M:GnProtocolOverUsbHid.GnProtocolOverUsbHid.Dispose">
+            <summary>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,160 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GnProtocol</name>
+    </assembly>
+    <members>
+        <member name="T:GnProtocol.GnpDataSerializer">
+            <summary>
+            Helper class used for deserializing strings from GN protocol packet data.
+            </summary>
+        </member>
+        <member name="M:GnProtocol.GnpDataSerializer.DeserializeAsciiString(System.Byte[],System.Int32,System.Boolean)">
+            <summary>
+            Extracts an ASCII string from a GN protocol data array.
+            The string may be zero-terminated.
+            </summary>
+            <param name="data">GN protocol data</param>
+            <param name="dataStartIndex">Index in data from where the string starts.</param>
+            <param name="firstByteIsLength">Set to <c>true</c> if the byte value at dataStartIndex contains the string length.</param>
+            <returns>string value</returns>
+        </member>
+        <member name="M:GnProtocol.GnpDataSerializer.DeserializeUtf8String(System.Byte[],System.Int32,System.Boolean)">
+            <summary>
+            Extracts an UTF-8 encoded string from a GN protocol data array.
+            </summary>
+            <param name="data">GN protocol data</param>
+            <param name="dataStartIndex">Index in data from where the string starts.</param>
+            <param name="firstByteIsLength">Set to <c>true</c> if the byte value at dataStartIndex contains the string length.</param>
+            <returns>string value</returns>
+        </member>
+        <member name="T:GnProtocol.GnpPacket">
+            <summary>
+            GnpPacket represents a GN Protocol packet.
+            A GN Protocol packet consists of a 5 bytes header followed by optional payload data.
+            </summary>
+        </member>
+        <member name="F:GnProtocol.GnpPacket.HEADER_SIZE">
+            <summary>
+            Fixed heade size in bytes
+            </summary>
+        </member>
+        <member name="F:GnProtocol.GnpPacket.MAX_DATA_SIZE">
+            <summary>
+            Max. payload (Data array) size in bytes.
+            </summary>
+        </member>
+        <member name="P:GnProtocol.GnpPacket.DestinationAddress">
+            <summary>
+            Destination address. Default value is 1.
+            </summary>
+        </member>
+        <member name="P:GnProtocol.GnpPacket.SourceAddress">
+            <summary>
+            Source address.
+            The default value is 0, which is the PC's GN protocol address.
+            </summary>
+        </member>
+        <member name="P:GnProtocol.GnpPacket.Type">
+            <summary>
+            Packet type.
+            Note: Packets of type 'Event' are not ACKnowledged.
+            </summary>
+        </member>
+        <member name="P:GnProtocol.GnpPacket.Length">
+            <summary>
+            Total length of packet, in bytes.
+            </summary>
+        </member>
+        <member name="P:GnProtocol.GnpPacket.SequenceNumber">
+            <summary>
+            Packet sequence number. Should be incremented for every sent packet.
+            The sequence number is used to match request and response packets.
+            If the SequenceNumber is zero (default value) an auto-generated
+            sequence number will be inserted before transmission.
+            </summary>
+        </member>
+        <member name="P:GnProtocol.GnpPacket.Command">
+            <summary>
+            Command identifier.
+            Note that most commands must be followed by a subcommand and subcommand specific data in the Data property.
+            </summary>
+        </member>
+        <member name="P:GnProtocol.GnpPacket.Data">
+            <summary>
+            Command data.
+            First byte is usually a subcommand, however some commands have no data.
+            </summary>
+        </member>
+        <member name="T:GnProtocol.GnpPacketSerializer">
+            <summary>
+            GnpPacketSerializer handles serialization and de-serialization of GN Protocol packets to/from a byte array.
+            </summary>
+        </member>
+        <member name="M:GnProtocol.GnpPacketSerializer.Serialize(GnProtocol.GnpPacket)">
+            <summary>
+            Serializes a GN protocol packet to a byte array.
+            </summary>
+            <param name="packet">Packet to serialize</param>
+            <returns>Byte array</returns>
+        </member>
+        <member name="M:GnProtocol.GnpPacketSerializer.Deserialize(System.Byte[])">
+            <summary>
+            Deserializes a byte array into a GN protocol packet.
+            </summary>
+            <param name="input">Byte array</param>
+            <returns>GN protocol packet</returns>
+        </member>
+        <member name="T:GnProtocol.NackSubcommand">
+            <summary>
+            GN Protocol NACK subcommands.
+            </summary>
+        </member>
+        <member name="T:GnProtocol.GnpNackException">
+            <summary>
+            This exception is thrown if a GN protocol packet contains a NACK response.
+            </summary>
+        </member>
+        <member name="T:GnProtocol.IGnProtocol">
+            <summary>
+            Generic interface for sending and receiving GN Protocol packets.
+            </summary>
+        </member>
+        <member name="M:GnProtocol.IGnProtocol.SendGnProtocolPacket(GnProtocol.GnpPacket)">
+            <summary>
+            Send a GN Protocol package without waiting for a response.
+            Use this method to send GN Protocol packets of type 'event'.
+            </summary>
+            <param name="packet">Packet to send</param>
+        </member>
+        <member name="M:GnProtocol.IGnProtocol.SendGnProtocolPacketAndWaitForResponse(GnProtocol.GnpPacket)">
+            <summary>
+            Send a GN Protocol package and wait for response.
+            </summary>
+            <param name="packet">Packet to send</param>
+            <returns>Response packet</returns>
+            <exception cref="T:System.TimeoutException">Thrown on response timeout</exception>
+            <exception cref="T:GnProtocol.GnpNackException">Thrown if response contains a NACK reply</exception>
+        </member>
+        <member name="M:GnProtocol.IGnProtocol.SendGnProtocolPacketAndWaitForResponse(GnProtocol.GnpPacket,System.Int32)">
+            <summary>
+            Send a GN Protocol package and wait for response.
+            </summary>
+            <param name="packet">Packet to send</param>
+            <param name="responseTimeoutMs">Response timeout in milliseconds</param>
+            <returns>Response packet</returns>
+            <exception cref="T:System.TimeoutException">Thrown on response timeout</exception>
+            <exception cref="T:GnProtocol.GnpNackException">Thrown if response contains a NACK reply</exception>
+        </member>
+        <member name="E:GnProtocol.IGnProtocol.GnProtocolEventPacketReceived">
+            <summary>
+            Raised when a GN Protocol packet of type 'event' has been received.
+            </summary>
+        </member>
+        <member name="P:GnProtocol.IGnProtocol.ResponseTimeout">
+            <summary>
+            Response timeout in seconds (default value is 5 seconds).
+            </summary>
+        </member>
+    </members>
+</doc>
