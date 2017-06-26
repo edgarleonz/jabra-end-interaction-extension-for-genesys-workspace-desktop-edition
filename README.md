@@ -18,7 +18,7 @@ The extension supports:
 When an Interaction window is shown – a new tab named Headset is shown. When selecting this tab the name and firmware version of a connected Jabra headset is shown. When the Interaction goes into a state where it is possible to mark is as _Done_ – it can be done from the headset controller box.
 
 ## How to test this extension
-To test this extension (before deploying it to an organization), you must do this on a PC with Genesys Workspace Desktop Edition version 8.5 installed:
+Before deploying the extension to an organization, you can test this extension from a PC with Genesys Workspace Desktop Edition version 8.5 installed:
 - Close the Genesys Workspace Desktop Edition software
 - Unzip the [zip file](https://github.com/gnaudio/jabra-end-interaction-extension-for-genesys-workspace-desktop-edition/releases) and copy the content to _C:\Program Files (x86)\GCTI\Workspace Desktop Edition_
 - Start the Genesys Workspace Desktop Edition software
@@ -29,6 +29,5 @@ To remove the extension, close the Genesys Workspace Desktop Edition software an
 Genesys recommend using the [ClickOnce](https://msdn.microsoft.com/en-us/library/142dbbz4(v=vs.90).aspx) technology for deploying Genesys Workspace Desktop Edition to an organization.
 
 ### How to deploy this extension to an organization
-Unzip the [zip file](https://github.com/gnaudio/jabra-end-interaction-extension-for-genesys-workspace-desktop-edition/releases) and copy the content to _C:\Program Files (x86)\GCTI\Workspace Desktop Edition_ to prepare a new ClickOnce revision. This is documented here:
-[https://docs.genesys.com/Documentation/IW/latest/Dep/DeploymentProcedures](https://docs.genesys.com/Documentation/IW/latest/Dep/DeploymentProcedures)
+Unzip the [zip file](https://github.com/gnaudio/jabra-end-interaction-extension-for-genesys-workspace-desktop-edition/releases) and copy the content to _C:\Program Files (x86)\GCTI\Workspace Desktop Edition_ to prepare a new ClickOnce revision as documented here: [https://docs.genesys.com/Documentation/IW/latest/Dep/DeploymentProcedures](https://docs.genesys.com/Documentation/IW/latest/Dep/DeploymentProcedures)
 
