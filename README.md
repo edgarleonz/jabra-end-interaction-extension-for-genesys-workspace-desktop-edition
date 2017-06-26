@@ -10,7 +10,7 @@ This Genesys Workspace Desktop Edition extension adds value to call center agent
 ![VSTS build status](https://gnaudio.visualstudio.com/_apis/public/build/definitions/45495ae2-8252-4d9e-a321-699be9abf508/100/badge)
 
 ## Extension
-The extension supports:
+This extension supports:
 -	Genesys Workspace Desktop Edition version 8.5
 -	The following Jabra headsets: Jabra BIZ 2300, Jabra LINK 260 or Jabra BIZ 2400 II CC
 
