@@ -27,10 +27,7 @@ To remove the extension, close the Genesys Workspace Desktop Edition software an
 
 ## Deployment
 ### Option 1
-Genesys recommend using the [ClickOnce](https://msdn.microsoft.com/en-us/library/142dbbz4(v=vs.90).aspx) technology for deploying Genesys Workspace Desktop Edition to an organization.
+Genesys recommend using the [ClickOnce](https://msdn.microsoft.com/en-us/library/142dbbz4(v=vs.90).aspx) technology for deploying Genesys Workspace Desktop Edition to an organization. Unzip the [zip file](https://github.com/gnaudio/jabra-end-interaction-extension-for-genesys-workspace-desktop-edition/releases) and copy the content to _C:\Program Files (x86)\GCTI\Workspace Desktop Edition_ to prepare and publish a new ClickOnce revision as documented here:
+[https://docs.genesys.com/Documentation/IW/latest/Dep/DeploymentProcedures](https://docs.genesys.com/Documentation/IW/latest/Dep/DeploymentProcedures)
 ### Option 2
 Use the the dedicated Windows installer (.MSI file) from a release. This installer supports mass deployment scenarios.
-
-### How to deploy this extension to an organization
-Unzip the [zip file](https://github.com/gnaudio/jabra-end-interaction-extension-for-genesys-workspace-desktop-edition/releases) and copy the content to _C:\Program Files (x86)\GCTI\Workspace Desktop Edition_ to prepare and publish a new ClickOnce revision as documented here:
-[https://docs.genesys.com/Documentation/IW/latest/Dep/DeploymentProcedures](https://docs.genesys.com/Documentation/IW/latest/Dep/DeploymentProcedures)
