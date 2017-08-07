@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product Id="*" Name="Jabra Genesys Workspace Desktop Edition end interaction extension" Language="1033" Version="0.9.0.0" Manufacturer="GN Audio A/S" UpgradeCode="3f7cb2ed-2848-45cd-899e-74eca52c5980">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+		<MediaTemplate EmbedCab="yes" />
+
+		<Feature Id="ProductFeature" Title="Setup" Level="1">
+			<ComponentGroupRef Id="ProductComponents" />
+		</Feature>
+	</Product>
+
+  <Fragment>
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="GCTI" Name="GCTI">
+          <Directory Id="INSTALLFOLDER" Name="Workspace Desktop Edition" />
+        </Directory>
+      </Directory>
+    </Directory>
+  </Fragment>
+
+	<Fragment>
+	  <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+	    <Component Id="ProductComponent">
+	      <File Source="$(var.JabraInteractionExtension.TargetDir)\JabraInteractionExtension.dll" />
+	      <File Source="$(var.JabraInteractionExtension.TargetDir)\JabraInteractionExtension.module-config" />
+	    </Component> 
+	  </ComponentGroup>
+	</Fragment>
+</Wix>

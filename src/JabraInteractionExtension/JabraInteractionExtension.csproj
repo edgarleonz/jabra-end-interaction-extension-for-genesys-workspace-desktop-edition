@@ -94,10 +94,10 @@
       <HintPath>Import\Genesyslab.Platform.OpenMedia.Protocols.dll</HintPath>
     </Reference>
     <Reference Include="GnProtocol, Version=1.0.13224.0, Culture=neutral, PublicKeyToken=abee3da38e3ebf66, processorArchitecture=MSIL">
-      <HintPath>packages\GnProtocolInterface.1.0.13224.0\lib\net40\GnProtocol.dll</HintPath>
+      <HintPath>..\packages\GnProtocolInterface.1.0.13224.0\lib\net40\GnProtocol.dll</HintPath>
     </Reference>
     <Reference Include="GnProtocolOverUsbHid, Version=3.0.586.0, Culture=neutral, PublicKeyToken=d5c14edeb73b092a, processorArchitecture=MSIL">
-      <HintPath>packages\GnProtocolOverUsbHid.3.0.586.0\lib\net40\GnProtocolOverUsbHid.dll</HintPath>
+      <HintPath>..\packages\GnProtocolOverUsbHid.3.0.586.0\lib\net40\GnProtocolOverUsbHid.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
@@ -116,19 +116,19 @@
       <RequiredTargetFramework>3.0</RequiredTargetFramework>
     </Reference>
     <Reference Include="UsbDeviceInfo, Version=1.0.10949.0, Culture=neutral, PublicKeyToken=ddd537774a768802, processorArchitecture=MSIL">
-      <HintPath>packages\UsbDeviceInfo.1.0.10949.0\lib\net40\UsbDeviceInfo.dll</HintPath>
+      <HintPath>..\packages\UsbDeviceInfo.1.0.10949.0\lib\net40\UsbDeviceInfo.dll</HintPath>
     </Reference>
     <Reference Include="UsbDeviceScanner, Version=1.2.306.0, Culture=neutral, PublicKeyToken=7e3adec26ad93842, processorArchitecture=MSIL">
-      <HintPath>packages\UsbDeviceScanner.1.2.306.0\lib\net40\UsbDeviceScanner.dll</HintPath>
+      <HintPath>..\packages\UsbDeviceScanner.1.2.306.0\lib\net40\UsbDeviceScanner.dll</HintPath>
     </Reference>
     <Reference Include="UsbDeviceScannerInterface, Version=1.2.306.0, Culture=neutral, PublicKeyToken=ddd537774a768802, processorArchitecture=MSIL">
-      <HintPath>packages\UsbDeviceScanner.1.2.306.0\lib\net40\UsbDeviceScannerInterface.dll</HintPath>
+      <HintPath>..\packages\UsbDeviceScanner.1.2.306.0\lib\net40\UsbDeviceScannerInterface.dll</HintPath>
     </Reference>
     <Reference Include="UsbHidDevice, Version=2.0.585.0, Culture=neutral, PublicKeyToken=e396e3423458eafa, processorArchitecture=MSIL">
-      <HintPath>packages\UsbHidDevice.2.0.585.0\lib\net40\UsbHidDevice\bin\Release\UsbHidDevice.dll</HintPath>
+      <HintPath>..\packages\UsbHidDevice.2.0.585.0\lib\net40\UsbHidDevice\bin\Release\UsbHidDevice.dll</HintPath>
     </Reference>
     <Reference Include="UsbHidDeviceInterface, Version=2.0.585.0, Culture=neutral, PublicKeyToken=f142cc8c287c2ed2, processorArchitecture=MSIL">
-      <HintPath>packages\UsbHidDevice.2.0.585.0\lib\net40\UsbHidDevice\bin\Release\UsbHidDeviceInterface.dll</HintPath>
+      <HintPath>..\packages\UsbHidDevice.2.0.585.0\lib\net40\UsbHidDevice\bin\Release\UsbHidDeviceInterface.dll</HintPath>
     </Reference>
     <Reference Include="WindowsBase">
       <RequiredTargetFramework>3.0</RequiredTargetFramework>
