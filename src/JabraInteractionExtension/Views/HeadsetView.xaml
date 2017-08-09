@@ -34,7 +34,7 @@
       <Border Background="White" BorderBrush="Gainsboro" BorderThickness="1" Margin="2">
         <StackPanel Margin="5">
           <TextBlock Text="Description:" FontWeight="Bold"/>
-          <TextBlock TextAlignment="Left" TextWrapping="Wrap">If you connect and use a Jabra BIZ 2300, Jabra LINK 260 or a Jabra BIZ 2400 II CC the triangle button is reconfigured to do an "Interaction Done" action.</TextBlock>
+          <TextBlock TextAlignment="Left" TextWrapping="Wrap">If you connect and use a Jabra BIZ 2300, Jabra LINK 260, Jabra LINK 265 or a Jabra BIZ 2400 II CC the triangle button is reconfigured to do an "Interaction Done" action.</TextBlock>
           <Image Margin="5" Source="pack://application:,,,/JabraInteractionExtension;component/Resources/Biz2300.png" Stretch="None" HorizontalAlignment="Center"/>
         </StackPanel>
       </Border>
