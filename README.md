@@ -12,7 +12,7 @@ This Genesys Workspace Desktop Edition extension adds value to call center agent
 ## Extension
 This extension supports:
 -	Genesys Workspace Desktop Edition version 8.5
--	The following Jabra headsets: Jabra BIZ 2300, Jabra LINK 260 or Jabra BIZ 2400 II CC
+-	The following Jabra headsets: Jabra BIZ 2300, Jabra LINK 260, Jabra LINK 265 or Jabra BIZ 2400 II CC
 
 ## Use case
 When an Interaction window is shown – a new tab named _Headset_ is shown. When selecting this tab the name and firmware version of a connected Jabra headset is shown. When the Interaction goes into a state where it is possible to mark is as _Done_ – it can be done from the headset controller box.
