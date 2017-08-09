@@ -25,6 +25,7 @@ namespace JabraInteractionExtension.Models
       0x2303, // BIZ 2300 MS mono
       0x2304, // BIZ 2300 MS stereo
       0x2319, // LINK 260 (Santana Advanced)
+      0x2311, // LINK 265
       0x2321, // BIZ 2400 II CC mono
       0x2322, // BIZ 2400 II CC stereo
       0x2323, // BIZ 2400 II CC MS mono
