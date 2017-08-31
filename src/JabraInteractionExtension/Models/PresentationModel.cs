@@ -9,24 +9,24 @@ namespace JabraInteractionExtension.Models
   /// The behabior of the PresentationModel class
   /// </summary>
   public class PresentationModel : IPresentationModel, INotifyPropertyChanged
-	{
-		// Field variables
-	  private DeviceService deviceService;
+  {
+    // Field variables
+    private DeviceService deviceService;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="PresentationModel"/> class.
     /// </summary>
     public PresentationModel()
-		{
+    {
       DeviceInit();
-		}
+    }
 
-	  private void DeviceInit()
-	  {
-	    deviceService = DeviceService.Instance;
-	    deviceService.DeviceAttachedOrDetacted += DeviceService_DeviceAttachedOrDetacted;
-	    deviceService.DeviceAction += DeviceService_DeviceAction;
-	    deviceService.GetConnectedDevices();
+    private void DeviceInit()
+    {
+      deviceService = DeviceService.Instance;
+      deviceService.DeviceAttachedOrDetacted += DeviceService_DeviceAttachedOrDetacted;
+      deviceService.DeviceAction += DeviceService_DeviceAction;
+      deviceService.GetConnectedDevices();
     }
 
     private void DeviceService_DeviceAttachedOrDetacted(object sender, DeviceAttachedOrDetactedEventArgs e)
@@ -61,153 +61,111 @@ namespace JabraInteractionExtension.Models
       }
     }
 
-	  /// <summary>
-	  /// Custom action 0
-	  /// </summary>
-	  public void CustomAction0()
-	  {
-	    CloseInteractionIfPossible();
-	  }
+    /// <summary>
+    /// Custom action 0
+    /// </summary>
+    public void CustomAction0()
+    {
+      CloseInteractionIfPossible();
+    }
 
     /// <summary>
     /// Custom action 1
     /// </summary>
     public void CustomAction1()
-	  {
-	    CloseInteractionIfPossible();
-	  }
+    {
+      CloseInteractionIfPossible();
+    }
 
-	  /// <summary>
-	  /// Custom action 1
-	  /// </summary>
-	  public void CustomAction2()
-	  {
-	    CloseInteractionIfPossible();
-	  }
+    /// <summary>
+    /// Custom action 2
+    /// </summary>
+    public void CustomAction2()
+    {
+      CloseInteractionIfPossible();
+    }
 
 
     #region IMySamplePresentationModel Members
 
     string deviceName = "-";
+
     /// <summary>
     /// Gets or sets the header to set in the parent view.
     /// </summary>
     /// <value>The header.</value>
     public string DeviceName
-		{
-			get { return deviceName; }
-			set { if (deviceName != value) { deviceName = value; OnPropertyChanged("DeviceName"); } }
-		}
+    {
+      get { return deviceName; }
+      set
+      {
+        if (deviceName != value)
+        {
+          deviceName = value;
+          OnPropertyChanged("DeviceName");
+        }
+      }
+    }
 
-	  Version deviceFw;
-	  /// <summary>
-	  /// Gets or sets the header to set in the parent view.
-	  /// </summary>
-	  /// <value>The header.</value>
-	  public Version DeviceFw
-	  {
-	    get { return deviceFw; }
-	    set { if (deviceFw != value) { deviceFw = value; OnPropertyChanged("DeviceFw"); } }
-	  }
+    Version deviceFw;
+
+    /// <summary>
+    /// Gets or sets the header to set in the parent view.
+    /// </summary>
+    /// <value>The header.</value>
+    public Version DeviceFw
+    {
+      get { return deviceFw; }
+      set
+      {
+        if (deviceFw != value)
+        {
+          deviceFw = value;
+          OnPropertyChanged("DeviceFw");
+        }
+      }
+    }
 
     ICase @case;
-		/// <summary>
+
+    /// <summary>
     /// Gets or sets the case.
     /// </summary>
     /// <value>The case.</value>
     public ICase Case
-		{
-			get { return @case; }
-			set { if (@case != value) { @case = value; OnPropertyChanged("Case"); } }
-		}
-
-	  public bool IsInteractionVisible { get; set; }
-
-	  private void CloseInteractionIfPossible()
-	  {
-	    var container = HeadsetView.Container;
-
-	    var interactionManager = container.Resolve<IInteractionManager>();
-
-	    string id = string.Empty;
-	    foreach (var interaction in interactionManager.Interactions)
-	    {
-	      if (interaction.IsItPossibleToMarkDone && IsInteractionVisible == true && interaction.CaseId == @case.CaseId)
-	      {
-	        id = interaction.InteractionId;
-	      }
-	    }
-	    if (!string.IsNullOrEmpty(id))
-	    {
-	      interactionManager.CloseInteraction(id);
-	    }
+    {
+      get { return @case; }
+      set
+      {
+        if (@case != value)
+        {
+          @case = value;
+          OnPropertyChanged("Case");
+        }
+      }
     }
 
-    /*
-	  private void TestVoiceRecording()
-	  {
-	    var container = HeadsetView.Container;
+    public bool IsInteractionVisible { get; set; }
 
-	    IAgent myAgent = container.Resolve<IAgent>();
-	    IEnterpriseServiceProvider enterpriseService = myAgent.EntrepriseService;
+    private void CloseInteractionIfPossible()
+    {
+      var container = HeadsetView.Container;
 
-	    var esp = HeadsetView.Esp;
+      var interactionManager = container.Resolve<IInteractionManager>();
 
-	    var iv = esp.Resolve<IInteractionVoice>();
-
-      //iv.IsCallRecording
-	    iv.IsCallRecording = true;
-	  }
-
-    private void Test123()
-	  {
-	    var container = HeadsetView.Container;
-
-	    IAgent myAgent = container.Resolve<IAgent>();
-	    IEnterpriseServiceProvider enterpriseService = myAgent.EntrepriseService;
-
-	    var interactionManager = container.Resolve<IInteractionManager>();
-
-	    foreach (var i in interactionManager.Interactions)
-	    {
-	      string msg = "Interaction id: " + i.InteractionId.ToString() + " , Agent name: " + i.Agent.UserName + " , Duration: " + i.Duration.ToString();
-
-	      MessageBox.Show(msg);
-
-	      var data = i.ExtractAttachedData();
-	      var keys = data.AllKeys;
-
-	      foreach (var key in keys)
-	      {
-	        MessageBox.Show("Key - " + key + " : " + data[key].ToString());
-	      }
-
-        i.SetAttachedData("Jabra", "Headset BIZ2300, FW 1.2.3");
-	    }      
+      string id = string.Empty;
+      foreach (var interaction in interactionManager.Interactions)
+      {
+        if (interaction.IsItPossibleToMarkDone && IsInteractionVisible == true && interaction.CaseId == @case.CaseId)
+        {
+          id = interaction.InteractionId;
+        }
+      }
+      if (!string.IsNullOrEmpty(id))
+      {
+        interactionManager.CloseInteraction(id);
+      }
     }
-
-	  private void TestXYZ()
-	  {
-	    var container = MySampleView.Container;
-
-	    IAgent myAgent = container.Resolve<IAgent>();
-	    IEnterpriseServiceProvider enterpriseService = myAgent.EntrepriseService;
-
-	    var interactionManager = container.Resolve<IInteractionManager>();
-
-//      interactionManager.
-
-//	    SerializationInfo info;
-//	    StreamingContext context;
-//	    var request = new RequestFindInteractions(info, context);
-
-	    var request = RequestFindInteractions.Create();
-
-//	    foreach (var r in request.)
-//	    {
-//	    }
-	  }
-    */
 
     #endregion
 
@@ -215,11 +173,11 @@ namespace JabraInteractionExtension.Models
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-		protected void OnPropertyChanged(string propertyName)
-		{
+    protected void OnPropertyChanged(string propertyName)
+    {
       PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
 
-		#endregion
-	}
+    #endregion
+  }
 }
