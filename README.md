@@ -22,6 +22,7 @@ It is possible to implement another use use. This is done by change the implemen
 1. [Fork](https://help.github.com/articles/fork-a-repo/) [this](https://github.com/gnaudio/jabra-end-interaction-extension-for-genesys-workspace-desktop-edition.git) GitHub repo
 2. Modify [this C# file](https://github.com/gnaudio/jabra-end-interaction-extension-for-genesys-workspace-desktop-edition/blob/master/src/JabraInteractionExtension/Models/PresentationModel.cs). Look at the method *CloseInteractionIfPossible()*, and implement your custom use case like this
 3. Read the [note](https://github.com/gnaudio/jabra-end-interaction-extension-for-genesys-workspace-desktop-edition/blob/master/src/JabraInteractionExtension/Import/note.txt) and rebuild the solution
+4. Copy the output files to _C:\Program Files (x86)\GCTI\Workspace Desktop Edition_ to test and debug your implementation
 
 ## How to test this extension
 Before deploying the extension to an organization, you can test this extension from a PC with Genesys Workspace Desktop Edition version 8.5 installed:
