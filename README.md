@@ -19,9 +19,9 @@ When an Interaction window is shown – a new tab named _Headset_ is shown. When
 
 ### How to implement a custom use case
 It is possible to implement another use use. This is done by change the implementation and rebuild the software solution.
-1. [Fork](https://help.github.com/articles/fork-a-repo/) [this](https://github.com/gnaudio/jabra-end-interaction-extension-for-genesys-workspace-desktop-edition.git) repo
-2. Modify [this file](https://github.com/gnaudio/jabra-end-interaction-extension-for-genesys-workspace-desktop-edition/blob/master/src/JabraInteractionExtension/Models/PresentationModel.cs). Look at the method *CloseInteractionIfPossible()*
-3. Read the [note](https://github.com/gnaudio/jabra-end-interaction-extension-for-genesys-workspace-desktop-edition/blob/master/src/JabraInteractionExtension/Import/note.txt) and rebuild the solution.
+1. [Fork](https://help.github.com/articles/fork-a-repo/) [this](https://github.com/gnaudio/jabra-end-interaction-extension-for-genesys-workspace-desktop-edition.git) GitHub repo
+2. Modify [this file](https://github.com/gnaudio/jabra-end-interaction-extension-for-genesys-workspace-desktop-edition/blob/master/src/JabraInteractionExtension/Models/PresentationModel.cs). Look at the method *CloseInteractionIfPossible()*, and implement your custom use case like this
+3. Read the [note](https://github.com/gnaudio/jabra-end-interaction-extension-for-genesys-workspace-desktop-edition/blob/master/src/JabraInteractionExtension/Import/note.txt) and rebuild the solution
 
 ## How to test this extension
 Before deploying the extension to an organization, you can test this extension from a PC with Genesys Workspace Desktop Edition version 8.5 installed:
