@@ -18,7 +18,7 @@ This extension supports:
 When an Interaction window is shown – a new tab named _Headset_ is shown. When selecting this tab the name and firmware version of a connected Jabra headset is shown. When the Interaction goes into a state where it is possible to mark is as _Done_ – it can be done from the headset controller box.
 
 ### How to implement a custom use case
-It is possible to implement another use use. Developer skills are required. This is done by change the implementation and rebuild the software solution.
+It is possible to implement another use use. Developer skills are required. This is done by change the implementation and rebuild the software solution. Genesys Workspace Desktop developer information can be found here: https://docs.genesys.com/Documentation/IW
 1. [Fork](https://help.github.com/articles/fork-a-repo/) [this](https://github.com/gnaudio/jabra-end-interaction-extension-for-genesys-workspace-desktop-edition.git) GitHub repo
 2. Modify [this C# file](https://github.com/gnaudio/jabra-end-interaction-extension-for-genesys-workspace-desktop-edition/blob/master/src/JabraInteractionExtension/Models/PresentationModel.cs). Look at the method *CloseInteractionIfPossible()*, and implement your custom use case like this
 3. Read the [note](https://github.com/gnaudio/jabra-end-interaction-extension-for-genesys-workspace-desktop-edition/blob/master/src/JabraInteractionExtension/Import/note.txt) and rebuild the solution
